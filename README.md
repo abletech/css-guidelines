@@ -80,10 +80,6 @@ then importing compass in your manifest stylesheet:
 
 **Never import all of compass unless you actually need it. In the example above, only the css3 and reset is used**
 
-#### Bourbon
-
-
-
 ***
 
 ### Structure
