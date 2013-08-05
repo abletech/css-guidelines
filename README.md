@@ -21,7 +21,8 @@ The following are guidlines that should be followed (where possible) so we can k
   * [Writing maintainable SCSS](#writing-maintainable-scss) 
   * [Writing maintainable CSS](#writing-maintainable-css) 
   * [Writing Mixins](#writing-mixins) 
-  * [Example of bad CSS](#example-of-bad-css) 
+  * [Variables Example](#variables-example) 
+  * [Example of bad CSS](#example-of-bad-css)   
 * [Best Practices](#best-practices)
 
 
@@ -383,6 +384,24 @@ $desktop: 1280px;
 </pre>
 
 Above is a mixin used for media queries. The mixin is written so it can be included on any element then you can define the size of the screen you want the mixin to react to.
+
+### Variables Example 
+
+<pre>
+// Font Stacks
+$sansserif: "Montserrat", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+$serif "Droid Serif", "Georgia", serif;
+
+// Font Properties
+$font-size: 100%;
+$font-color: #333333;
+$font-weight: 300;
+
+//Body
+$body-background: #FFFFFF; 
+</pre>
+
+Above is a common list of variables that you may add to your variable partial.
 
 ***
 
