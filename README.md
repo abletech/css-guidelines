@@ -12,7 +12,7 @@ The following are guidlines that should be followed (where possible) so we can k
   * [Compass](#compass) 
 * [Structure](#structure)
   * [Stylesheet Structure](#stylesheet-structure) 
-  * [Layout 1 Manifest Contents](#layout-1-contents) 
+  * [Layout Manifest Contents](#layout-manifest-contents) 
 * [Writing CSS and SASS](#best-practices)
   * [Naming Conventions](#naming-conventions) 
   * [How to format CSS](#how-to-format-css) 
@@ -122,7 +122,7 @@ When including your stylesheets you should always make sure they come in the fol
 * **Common** (Common Styles which are used throughout the project)
 * **Specific** (Specific styles that are unique to layouts or pages)
 
-#### Layout 1 Manifest Contents
+#### Layout Manifest Contents
 
 Your application manifest file should look like the following:
 
