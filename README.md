@@ -69,11 +69,20 @@ Compass can be added to your project by adding the following to your gemfile:
 gem "compass-rails";
 </pre>
 
+**Note: 'compass compile' may need to be run on your project directory before compass starts working**
+
 then importing compass in your manifest stylesheet:
 
 <pre>
-@import "compass";
+@import "compass/reset";
+@import "compass/css3";
 </pre>
+
+**Never import all of compass unless you actually need it. In the example above, only the css3 and reset is used**
+
+#### Bourbon
+
+
 
 ***
 
@@ -130,7 +139,8 @@ Your application manifest file should look like the following:
 // import frameworks
 @import "bootstrap";
 @import "bootstrap-responsive";
-@import "compass";
+@import "compass/reset";
+@import "compass/css3";
 
 // import vendor
 @import "vendor/plugin";
