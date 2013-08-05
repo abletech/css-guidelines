@@ -160,7 +160,11 @@ Bootstrap is imported into the manifest file as a base for every project. **Make
 
 The bootstrap-responsive import is optional depending on whether you want a responsive layout or not.
 
-Common partials can be added and removed depending on what you need for each layout. This gives you great control of what styles are being compiled into each layout.
+Compass modules are added individually as we require them.
+
+Vendor styles are added next followed by all of our common styles. However variables and mixins must be imported first so they can be used by the following stylesheets.
+
+Finally, we import the layout that is relevant to this manifest file. In this case we are using layout1.
 
 ***
 
