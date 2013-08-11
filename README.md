@@ -21,6 +21,9 @@ The following are guidlines that should be followed (where possible) so we can k
   * [Writing maintainable SCSS](#writing-maintainable-scss) 
   * [Writing maintainable CSS](#writing-maintainable-css) 
   * [Writing Mixins](#writing-mixins) 
+  * [Media Query Mixin](#media-query-mixin) 
+  * [Retina Mixin](#retina-mixin) 
+  * [Clearfix Mixin](#clearfix-mixin) 
   * [Variables Example](#variables-example) 
   * [Example of bad CSS](#example-of-bad-css)   
 * [Best Practices](#best-practices)
@@ -89,7 +92,7 @@ then importing compass in your manifest stylesheet:
 
 #### Stylesheet Structure
 
-**Note: by default rails uses an "application.css" manifest. If we assume that each project will have seperate layouts then we should never use or require this file. Rather then having one manifest file, we use a manifest file for each layout. We can just delete the application manifest. Make sure you include the layout manifests in your views.**
+**Note: by default rails uses an "application.css" manifest. If we assume that each project will have separate layouts then we should never use or require this file. Rather then having one manifest file, we use a manifest file for each layout. We can just delete the application manifest. Make sure you include the layout manifests in your views.**
 
 This is generally how your stylesheets directory should look. The layout files are used as an example for what your specific styles would be.
 
@@ -365,6 +368,10 @@ The above is a bad example of css, the common styles that each element shares sh
 
 #### Writing Mixins
 
+**Below are various mixins which are handy to use in projects.**
+
+#### Media Query Mixin
+
 <pre>
 $mobile: 320px;
 $tablet: 1024px;
@@ -388,6 +395,44 @@ $desktop: 1280px;
 </pre>
 
 Above is a mixin used for media queries. The mixin is written so it can be included on any element then you can define the size of the screen you want the mixin to react to.
+
+#### Retina Mixin
+
+<pre>
+@mixin image-retina($image, $width, $height) {
+  @media (min--moz-device-pixel-ratio: 1.3),
+         (-o-min-device-pixel-ratio: 2.6/2),
+         (-webkit-min-device-pixel-ratio: 1.3),
+         (min-device-pixel-ratio: 1.3),
+         (min-resolution: 1.3dppx) {
+    /* on retina, use image that's scaled by 2 */
+    background-image: url($image);
+    background-size: $width $height;
+  }
+}
+</pre>
+
+The mixin above is used so you can simply give it an image which will automatically be optimized for retina display.
+
+#### Clearfix Mixin
+
+<pre>
+@mixin clearfix() {
+    & {
+        *zoom: 1;
+    }
+    &:before,
+    &:after {
+        content: "";
+        display: table;
+    }
+    &:after {
+        clear: both;
+    }
+}
+</pre>
+
+The clearfix mixin can be used on any element to apply a clearfix.
 
 ### Variables Example 
 
