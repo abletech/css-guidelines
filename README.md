@@ -46,9 +46,17 @@ gem 'bootstrap-sass', '~> 2.3.2.1'
 then importing bootstrap in your manifest stylesheet:
 
 <pre>
+// app/stylesheets/application.css.scss
 @import "bootstrap";
 @import "bootstrap-responsive";
 </pre>
+
+**Note:** This requires replacing your `application.css` for `application.css.scss`
+
+Using the `.scss` extension on your application manifest means:
+
+* you should use `@import` instead of `require_tree` type statements (and not in comment blocks).
+* `@import` only works in a `.scss` file, and is needed to import functions such as in compass.
 
 #### Normalize
 
@@ -75,6 +83,7 @@ gem "compass-rails";
 then importing compass in your manifest stylesheet:
 
 <pre>
+// app/stylesheets/application.css.scss
 @import "compass/reset";
 @import "compass/css3";
 </pre>
