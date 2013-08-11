@@ -89,7 +89,11 @@ then importing compass in your manifest stylesheet:
 
 #### Stylesheet Structure
 
+**Note: by default rails uses an "application.css" manifest. If we assume that each project will have seperate layouts then we should never use or require this file. Rather then having one manifest file, we use a manifest file for each layout. We can just delete the application manifest. Make sure you include the layout manifests in your views.**
+
 This is generally how your stylesheets directory should look. The layout files are used as an example for what your specific styles would be.
+
+We use partials on the scss files so they are never compiled unless they are imported by the layout manifest file.
 
 <pre>
 /stylesheets
@@ -416,5 +420,6 @@ Below are a few best practices that can be applied when working with SASS or CSS
 * Always adopt the same spacing and naming conventions that the application your working on uses
 * Add common styles to common directory and specific styles to the layout/page directory
 * Always try to keep selectors as short as possible and less specific
+* 
 
 ***
