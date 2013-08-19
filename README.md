@@ -8,6 +8,7 @@ The following are guidlines that should be followed (where possible) so we can k
 
 * [Frameworks](#frameworks)
   * [Bootstrap](#bootstrap) 
+  * [Bootstrap 3 Upgrade](#bootstrap-3-upgrade) 
   * [Normalize](#normalize) 
   * [Compass](#compass) 
 * [Structure](#structure)
@@ -24,6 +25,7 @@ The following are guidlines that should be followed (where possible) so we can k
   * [Media Query Mixin](#media-query-mixin) 
   * [Retina Mixin](#retina-mixin) 
   * [Clearfix Mixin](#clearfix-mixin) 
+  * [Generating Sprites](#generating-sprites) 
   * [Variables Example](#variables-example) 
   * [Example of bad CSS](#example-of-bad-css)   
 * [Best Practices](#best-practices)
@@ -52,6 +54,16 @@ then importing bootstrap in your manifest stylesheet:
 @import "bootstrap";
 @import "bootstrap-responsive";
 </pre>
+
+#### Bootstrap 3 Upgrade
+
+**Note: The bootstrap-sass gem can now be updated to use Bootstrap 3. To use Bootstrap 3 use the following in your gemfile:**
+
+<pre>
+gem 'bootstrap-sass', :github => 'thomas-mcdonald/bootstrap-sass', :branch => '3'
+</pre>
+
+**Warning: If you are upgrading a current project from Bootstrap 2 to Bootstrap 3 you will have to change a few things to get it working correctly. Make sure to view the [Migration Documentation](http://getbootstrap.com/getting-started/#migration)**
 
 #### Normalize
 
@@ -107,6 +119,7 @@ We use partials on the scss files so they are never compiled unless they are imp
 	/partials
   		_base.scss
   		_grid.scss
+  		_sprites.scss
   		_variables.scss
   		_mixins.scss  
   		_typography.scss
@@ -434,6 +447,12 @@ The mixin above is used so you can simply give it an image which will automatica
 
 The clearfix mixin can be used on any element to apply a clearfix.
 
+#### Generating Sprites
+
+<pre>
+
+</pre>
+
 ### Variables Example 
 
 <pre>
@@ -465,6 +484,5 @@ Below are a few best practices that can be applied when working with SASS or CSS
 * Always adopt the same spacing and naming conventions that the application your working on uses
 * Add common styles to common directory and specific styles to the layout/page directory
 * Always try to keep selectors as short as possible and less specific
-* 
 
 ***
